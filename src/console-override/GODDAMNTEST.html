@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 user-scalable=no">
+
+		<title>Scriptacular</title>
+
+		<link rel="stylesheet" media="screen, projection" href="../../www/app.css">
+		<!-- <link rel="stylesheet" media="screen, projection" href="codemirror.css"> -->
+		<!--<script src="../../www/library.js"></script>-->
+		<script src="../js/library/CodeMirror-2.25.js"></script>
+		<script src="../js/library/codemirror-modes/css.js"></script>
+	</head>
+
+	<body>
+		<div id="content">
+			<textarea id="code">hello world!</textarea>
+			<script>
+				//CodeMirror.fromTextArea($('textarea')[0]);
+				var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+					lineNumbers: true,
+					matchBrackets: true
+				});
+			</script>
+		</div>
+	</body>
+</html>

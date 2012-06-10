@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>the child</title>
+	</head>
+
+	<body>
+		the child
+
+		<script>
+			(function() {
+				window.console = window.parent.Scriptacular.console;
+			}());
+		</script>
+
+		<script>
+		console.log('omg');
+		console.log('omg');
+		console.log(32);
+		console.log(['blah', 42, {omg: 'lol'}]);
+		console.log({
+			stuff: 'things',
+			blah: 42
+		});
+		</script>
+	</body>
+</html>

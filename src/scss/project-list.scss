@@ -1,0 +1,27 @@
+div#project-list {
+	header {
+		h1 { font-size: 28px; text-align: center; margin-top: 7px; }
+
+		a#add-project { position: absolute; top: 8px; right: 11px; width: 26px; height: 26px; font-size: 18px; color: #fff; text-decoration: none; @include border-radius(3px); border: 1px solid rgba(0, 0, 0, 0.2); text-align: center; padding-top: 3px; @include box-shadow(inset 0 0 0 1px rgba(255, 255, 255, 0.1)); @include background-y-multi(transparent, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.12) 50%, rgba(0, 0, 0, 0.12) 50%, rgba(0, 0, 0, 0.12) 100%); background-clip: padding-box; }
+	}
+
+	ul {
+		list-style: none;
+
+		li {
+			border-bottom: 1px solid #E0E0E0;
+
+			a {
+				position: relative; display: block; width: 100%; height: 100%; padding: 15px 12px; color: #333; text-decoration: none; font-size: 18px; font-weight: bold;
+
+				div.arrow { position: absolute; top: 50%; margin-top: -3px; right: 15px; }
+
+				&.active { @include background-y(#268EF2, #1F60E2); color: #fff; }
+			}
+		}
+	}
+
+	footer {
+		div#project-count { text-align: center; font-size: 13px; font-weight: bold; margin-top: 12px; }
+	}
+}

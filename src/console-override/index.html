@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>the parent</title>
+
+		<script src="../js/library/jQuery-1.7.2.js"></script>
+		<script src="../js/library/Underscore-1.3.3.js"></script>
+	</head>
+
+	<body>
+		the parent
+
+		<iframe src="frame.html"></iframe>
+
+		<div id="console">
+
+		</div>
+
+		<script>
+			(function() {
+				window.Scriptacular = {};
+
+				var myConsole = function(severity, myArgs) {
+						var args = Array.prototype.slice.call(myArgs),
+							consoleEl = $('#console');
+
+						_.each(args, function(arg) {
+							if (_.isString(arg)) {
+								consoleEl.append('<div class="' + severity + ' string">"' + arg + '"</div>');
+							} else if (_.isObject(arg)) {
+								consoleEl.append('<div class="' + severity + ' object">' + JSON.stringify(arg) + '</div>');
+							} else if (_.isNumber(arg)) {
+								consoleEl.append('<div class="' + severity + ' number">' + arg + '</div>');
+							}
+						});
+					}
+
+				Scriptacular.console = {
+					debug: function() {
+						myConsole('debug', arguments);
+					},
+					log: function() {
+						myConsole('log', arguments);
+					},
+					warn: function() {
+						myConsole('warn', arguments);
+					},
+					error: function() {
+						myConsole('error', arguments);
+					}
+				}
+			}());
+		</script>
+	</body>
+</html>
